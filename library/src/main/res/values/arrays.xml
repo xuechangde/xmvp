@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="SectionLevels">
+
+    </array>
+
+    <array name="SectionLevelValues">
+
+    </array>
+
+    <array name="last_next_length_3">
+        <item>0\%</item>
+        <item>100\%</item>
+    </array>
+</resources>

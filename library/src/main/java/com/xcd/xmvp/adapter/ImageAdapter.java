@@ -23,7 +23,7 @@ public class ImageAdapter extends EasyAdapter<Object> {
     public Context context;
 
     public ImageAdapter(List<Object> list, Context context) {
-        super(list, R.layout.adapter_image2);
+        super(list, R.layout.adapter_image);
         this.list = list;
         this.context = context;
     }

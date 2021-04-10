@@ -35,7 +35,7 @@ public class SelectImageAdapter extends EasyAdapter<Object> {
     public int selectnum = 1;
     public boolean isSingle = false;
     public SelectImageAdapter(Context context, List<Object> list_img, List<Object> list_img2, List<LocalMedia> medialist, int selectnum,boolean isSingle) {
-        super(list_img2, R.layout.adapter_image);
+        super(list_img2, R.layout.adapter_image_select);
         this.context = context;
         this.list_img = list_img;
         this.list_img2 = list_img2;
@@ -107,7 +107,7 @@ public class SelectImageAdapter extends EasyAdapter<Object> {
                                 @Override
                                 public void onSrcViewUpdate(ImageViewerPopupView popupView, int position) {
                                     View view = LayoutInflater.from(context)
-                                            .inflate(R.layout.adapter_image2,popupView,false);
+                                            .inflate(R.layout.adapter_image,popupView,false);
                                     ImageView iv = view.findViewById(R.id.image);
                                     popupView.updateSrcView(iv);
                                 }

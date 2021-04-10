@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -73,11 +73,12 @@ dependencies {
     api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     /*切圆角类*/
     api 'com.gcssloop.widget:rclayout:1.8.1'
+    /*xUtils基础功能框架*/
+    api 'org.xutils:xutils:3.9.0'
+    /*adapter适配器*/
     api 'com.lxj:easyadapter:1.2.0'
     /*权限请求框架*/
     api 'com.lxj:xpermission:1.0.1'
-    /*xUtils基础功能框架*/
-    api 'org.xutils:xutils:3.9.0'
     /*Xpopup弹窗*/
     api 'com.lxj:xpopup:2.2.23'
     /*图片尺寸压缩法*/
@@ -101,9 +102,8 @@ dependencies {
     /*MPchart统计图表框架*/
     api 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     /*高德地图定位*/
-    api 'com.amap.api:map2d:6.0.0'
-    api 'com.amap.api:location:5.2.0'
-    api 'com.amap.api:search:7.7.0'
+    api 'com.amap.api:3dmap:latest.integration'
+    api 'com.amap.api:location:latest.integration'
     /*极光推送*/
     api 'cn.jiguang.sdk:jpush:3.8.5'
     api 'cn.jiguang.sdk:jcore:2.5.5'

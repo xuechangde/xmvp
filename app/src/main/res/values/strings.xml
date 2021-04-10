@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MvpDemo</string>
+    <string name="app_name">XMvpDemo</string>
     <string name="loading">加载中</string>
     <string name="is_login">isLogin</string>
     <string name="account_number">账号</string>

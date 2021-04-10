@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.xcd.mvpdemo"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -20,7 +20,7 @@ android {
                 JPUSH_PKGNAME : "com.xcd.mvpdemo",
                 JPUSH_APPKEY : "", //极光开发平台上注册的包名对应的appkey.
                 JPUSH_CHANNEL : " ", //暂时填写默认值即可.
-                AMAP_APPKEY_VALUE:"",//高德题图key
+                AMAP_APPKEY_VALUE:"",//高德地图key
         ]
     }
     buildTypes {

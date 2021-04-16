@@ -109,6 +109,8 @@ dependencies {
     api 'cn.jiguang.sdk:jcore:2.5.5'
     /*腾讯bugly,崩溃日志采集*/
     api 'com.tencent.bugly:crashreport:latest.release'
+    /*分组列表，头部悬浮吸顶*/
+    api 'com.github.donkingliang:GroupedRecyclerViewAdapter:2.4.0'
     /*dagger2依赖注入框架*/
 //    api 'com.google.dagger:dagger:2.33'
 //    api 'com.google.dagger:dagger-android-support:2.33'

@@ -51,7 +51,10 @@ public class Builder {
     int trackBackgroundColor = Color.parseColor("#D7D7D7");
     int trackProgressSize = 0;
     int trackProgressColor = Color.parseColor("#FF4081");
+    int trackProgressGradientStartColor = Color.parseColor("#FF4081");
+    int trackProgressGradientEndColor = Color.parseColor("#303F9F");
     boolean trackRoundedCorners = false;
+    boolean trackGradientColor = false;
     //thumbText
     int thumbTextColor = Color.parseColor("#FF4081");
     boolean showThumbText = false;

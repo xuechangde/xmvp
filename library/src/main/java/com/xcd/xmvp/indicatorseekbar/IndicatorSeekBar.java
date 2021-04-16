@@ -6,9 +6,11 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
@@ -131,6 +133,9 @@ public class IndicatorSeekBar extends View {
     private int mProgressTrackSize;
     private int mBackgroundTrackColor;
     private int mProgressTrackColor;
+    private boolean mProgressTrackGradientColor;//是否设置渐变色
+    private int mProgressTrackGradientStartColor;//渐变色开始
+    private int mProgressTrackGradientEndColor;//渐变色结束
     private int[] mSectionTrackColorArray;//save the color for each section tracks.
     private boolean mCustomTrackSectionColorResult;//true to confirm to custom the section track color
     //thumb
@@ -210,6 +215,9 @@ public class IndicatorSeekBar extends View {
         mBackgroundTrackColor = ta.getColor(R.styleable.IndicatorSeekBar_isb_track_background_color, builder.trackBackgroundColor);
         mProgressTrackColor = ta.getColor(R.styleable.IndicatorSeekBar_isb_track_progress_color, builder.trackProgressColor);
         mTrackRoundedCorners = ta.getBoolean(R.styleable.IndicatorSeekBar_isb_track_rounded_corners, builder.trackRoundedCorners);
+        mProgressTrackGradientColor = ta.getBoolean(R.styleable.IndicatorSeekBar_isb_track_gradient_color,builder.trackGradientColor);
+        mProgressTrackGradientStartColor = ta.getColor(R.styleable.IndicatorSeekBar_isb_track_progress_gradient_start_color,builder.trackProgressGradientStartColor);
+        mProgressTrackGradientEndColor = ta.getColor(R.styleable.IndicatorSeekBar_isb_track_progress_gradient_end_color,builder.trackProgressGradientEndColor);
         //thumb
         mThumbSize = ta.getDimensionPixelSize(R.styleable.IndicatorSeekBar_isb_thumb_size, builder.thumbSize);
         mThumbDrawable = ta.getDrawable(R.styleable.IndicatorSeekBar_isb_thumb_drawable);
@@ -514,7 +522,20 @@ public class IndicatorSeekBar extends View {
             mStockPaint.setStrokeWidth(mBackgroundTrackSize);
             canvas.drawLine(mBackgroundTrack.left, mBackgroundTrack.top, mBackgroundTrack.right, mBackgroundTrack.bottom, mStockPaint);
             //draw progress track
-            mStockPaint.setColor(mProgressTrackColor);
+            if(mProgressTrackGradientColor){
+                //多段颜色渐变填充，有需要可以改为动态设置
+                int [] gradient_colors = {mProgressTrackGradientStartColor,mProgressTrackGradientEndColor};
+                float[] position = {0f,1.0f};
+                //(0,0)->(0,400)从上到下
+                //(0,400)->(0,0) 从下到上
+                //0,0）->(getMeasuredWidth(),0) 表示从左到右
+                //(getMeasuredWidth(),0)->(0,0) 表示从右到左
+                //0,0）-> (getMeasuredWidth(),getMeasuredHeight()) 斜角，从左上角到右下角
+                LinearGradient linearGradient = new LinearGradient(0,0,getMeasuredWidth(),0,gradient_colors,position,Shader.TileMode.CLAMP);
+                mStockPaint.setShader(linearGradient);
+            }else{
+                mStockPaint.setColor(mProgressTrackColor);
+            }
             mStockPaint.setStrokeWidth(mProgressTrackSize);
             if(mProgress>0){
                 canvas.drawLine(mProgressTrack.left, mProgressTrack.top, mProgressTrack.right, mProgressTrack.bottom, mStockPaint);

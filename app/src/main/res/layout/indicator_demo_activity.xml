@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".module.indicatordemo.IndicatorDemoActivity">
+    <com.xcd.xmvp.indicatorseekbar.IndicatorSeekBar
+        android:id="@+id/is_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/dp_5"
+        app:isb_indicator_color="#2196F3"
+        app:isb_indicator_text_size="10sp"
+        app:isb_progress="50"
+        app:isb_progress_value_float="true"
+        app:isb_thumb_color="#00ffffff"
+        app:isb_thumb_size="8dp"
+        app:isb_track_background_color="#E4E4E4"
+        app:isb_track_background_size="8dp"
+        app:isb_track_gradient_color="true"
+        app:isb_track_progress_gradient_start_color="#71B8F1"
+        app:isb_track_progress_gradient_end_color="#1394FA"
+        app:isb_track_progress_size="8dp"
+        app:isb_track_rounded_corners="true"
+        app:isb_user_seekable="false" />
+</RelativeLayout>
